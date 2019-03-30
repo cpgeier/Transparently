@@ -1,0 +1,27 @@
+{
+    "name": "AntiCorporate Client",
+    "version": "1.0",
+    "description": "Labels YT video native advertising.",
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "https://adshub.herokuapp.com/videos",
+        "http://127.0.0.1:8080/videos/"
+    ],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+    },
+    "icons": {
+        "16": "icons/logo16.png",
+        "32": "icons/logo32.png",
+        "48": "icons/logo48.png",
+        "128": "icons/logo128.png"
+    },
+    "content_scripts": [{
+        "matches": ["https://www.youtube.com/*"],
+        "run_at": "document_idle",
+        "js": ["js/contentScript.js"]
+    }],
+    "manifest_version": 2
+}
