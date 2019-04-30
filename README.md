@@ -4,7 +4,7 @@ Lightweight Chrome extension designed to bring content transparency to Youtube.
 
 ![Concept Art](/images/design.png)
 
-I'm trying to build an interface so that people can share more information about what they are watching and what they want others to see. Youtube is the second largest site on in the internet however the focus is put on content creators rather than community. Hope this tool will provide a platform to share basic information like the time stamps of ads in videos and when the videos intro/outro starts and stops. 
+I'm trying to build an interface so that people can share more information about what they are watching and what they want others to see. Youtube is the second largest site on in the internet however the focus is put on content creators rather than community. YoutubeAdLabeler will provide a platform to share basic information like the time stamps of ads in videos and when the videos intro/outro starts and stops. 
 
 # Installation
 
