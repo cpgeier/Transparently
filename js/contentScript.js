@@ -1,30 +1,3 @@
-var API_ROOT_URL = "https://adshub.herokuapp.com";
-
-function ytid(video_url) {
-    var video_id = video_url.split('v=')[1];
-    var ampersandPosition = video_id.indexOf('&');
-    if (ampersandPosition != -1)
-        video_id = video_id.substring(0, ampersandPosition);
-    return video_id;
-}
-
-function mark_ads_from_database() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", API_ROOT_URL + "/videos/" + ytid(location.href), true);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            var resp = JSON.parse(xhr.responseText);
-            console.log(resp);
-            resp.ads.forEach(element => {
-                console.log("Element: " + element);
-                mark_ad_async(element.left, element.width);
-            });
-        }
-    };
-    xhr.send();
-}
-
 function mark_ad_async(style_left, style_scaleX) {
     ads = document.getElementsByClassName('ytp-progress-list');
     newDiv = document.createElement("div");
@@ -42,6 +15,17 @@ function clear_old_ads() {
     }*/
 }
 
-clear_old_ads();
-mark_ads_from_database();
+chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+    console.log(response.farewell);
+});
 
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+      console.log(sender.tab ?
+                  "from a content script:" + sender.tab.url :
+                  "from the extension");
+      if (request.subject == "adhub") {
+        mark_ad_async(request.element.left, request.element.width);
+        sendResponse({status: 0});
+      }
+    });

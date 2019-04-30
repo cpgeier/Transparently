@@ -3,9 +3,10 @@
     "version": "1.0",
     "description": "Labels YT video native advertising.",
     "permissions": [
+        "tabs",
         "activeTab",
         "declarativeContent",
-        "https://adshub.herokuapp.com/videos",
+        "https://adshub.herokuapp.com/*",
         "http://127.0.0.1:8080/videos/"
     ],
     "background": {
