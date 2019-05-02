@@ -20,7 +20,7 @@ Then load the package into chrome:
 
 # Usage
 
-The YoutubeAdLabeler app needs no configuration/management. It simiply loads video labels whenever a youtube page is loaded. Try visiting https://www.youtube.com/watch?v=niz3Shv6QWY to see an example of the functionality.
+The Transparently app needs no configuration/management. It simiply loads video labels whenever a youtube page is loaded. Try visiting https://www.youtube.com/watch?v=niz3Shv6QWY to see an example of the functionality.
 
 If you do not see adds show up on this video, try waiting ~10-20 seconds and try again.
 
