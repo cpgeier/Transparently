@@ -10,7 +10,7 @@ I'm trying to build an interface so that people can share more information about
 
 First clone the repo:
 ```
-git clone https://github.com/cpgeier/YoutubeAdLabeler.git
+git clone https://github.com/cpgeier/Transparently.git
 ```
 Then load the package into chrome:
 1. Visit chrome://extensions.
